@@ -8,10 +8,10 @@
 // chiedere all'utente il numero di km che dovrà percorrere
 // chiedere all'utente la sua età
 // eventualmete trasformare i dati in numero
-// moltiplicare il numero dei km per 0.21€ per ottenere la spesa standard
-// se l'utente è minorenne: decurtare la spesa standard del 20%, arrotondarla e stamparla
+// moltiplicare il numero dei km per 0.21€ per ottenere la spesa
+// se l'utente è minorenne: decurtare la spesa del 20%, arrotondarla e stamparla
 // se l'utente è over 65: decurtare la spesa del 40%, arrotondarla e stamparla
-// in tutti gli altri casi, arrotondare la spesa standard e stamparla.
+// in tutti gli altri casi, arrotondare la spesa e stamparla.
 
 
 const userAge = parseInt ( prompt("Inserisci la tua età") );
@@ -20,5 +20,21 @@ console.log(userAge);
 const userTravel = parseInt ( prompt("Inserisci i km da percorrere") );
 console.log(userTravel);
 
-let standardPrice  = userTravel * 0.21 + '€';
-console.log(standardPrice);
+let userPrice  = userTravel * 0.21;
+console.log(userPrice);
+
+let priceUnder;
+let priceOver;
+
+if ( userAge < 18){
+    priceUnder = userPrice - (userPrice *  20 / 100);
+    userPrice =  Math.round(priceUnder * 100) / 100;
+}
+else if (userAge >= 65){
+    priceOver = userPrice - (userPrice *  40 / 100);
+    userPrice =  Math.round(priceOver * 100) / 100;
+}
+else{
+    userPrice = Math.round (userPrice);
+}
+console.log (userPrice);
