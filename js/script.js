@@ -15,13 +15,12 @@
 
 
 const userAge = parseInt ( prompt("Inserisci la tua età") );
-console.log(userAge);
+// console.log(userAge);
 
 const userTravel = parseInt ( prompt("Inserisci i km da percorrere") );
-console.log(userTravel);
+// console.log(userTravel);
 
 let userPrice  = userTravel * 0.21;
-console.log(userPrice);
 
 let priceUnder;
 let priceOver;
@@ -37,4 +36,5 @@ else if (userAge >= 65){
 else{
     userPrice = Math.round (userPrice);
 }
+
 console.log (userPrice);
